@@ -25,7 +25,7 @@
     <main class="container">
       <h1 class="visually-hidden">Магазин веб-сайтов, приложений, презентаций</h1>
 
-      <section class="promo">
+      <section class="promo-slider">
         <h2 class="visually-hidden">Промо-слайдер</h2>
 
         <ul class="promo-list">
@@ -34,54 +34,45 @@
             <p>Математически выверенный дизайн
                для вашего сайта или мобильного приложения.</p>
             <a class="button" href="#">Узнать больше</a>
-            <p class="promo-item-image">
-              <img src="promo-image-1.svg" width="100" height="100" alt="Промо картинка 1">
-            </p>
           </li>
           <li class="promo-item">
             <b>Любим математику как никто другой</b>
             <p>Никакого креатива, только математические формулы
                для расчета идеальных пропорций.</p>
             <a class="button" href="#">Узнать больше</a>
-            <p class="promo-item-image">
-              <img src="promo-image-2.svg" width="100" height="100" alt="Промо картинка 2">
-            </p>
           </li>
           <li class="promo-item">
             <b>Только ночь, только хардкор</b>
             <p>Работать днем, как все? Мы против этого.
                Ближе к полуночи работа только начинается.</p>
             <a class="button" href="#">Узнать больше</a>
-            <p class="promo-item-image">
-              <img src="promo-image-3.svg" width="100" height="100" alt="Промо картинка 3">
-            </p>
           </li>
         </ul>
       </section>
 
-      <section class="services">
+      <section class="our-services">
         <h2 class="visually-hidden">Наши услуги</h2>
 
         <ul class="services-list">
-          <li class="services-item">
+          <li class="service-item">
             <h3>Веб-сайты</h3>
-            <p class="services-item-image">
+            <p class="service-item-image">
               <img src="services-image-1.svg" width="100" height="100" alt="Веб сайты">
             </p>
             <p>Мир никогда не будет прежним после того как увидит ваш сайт!</p>
             <a class="button" href="#">Заказать</a>
           </li>
-          <li class="services-item">
+          <li class="service-item">
             <h3>Приложения</h3>
-            <p class="services-item-image">
+            <p class="service-item-image">
               <img src="services-image-2.svg" width="100" height="100" alt="Приложения">
             </p>
             <p>Покорите топ-10 приложений в AppStore и Google-Play</p>
             <a class="button" href="#">Заказать</a>
           </li>
-          <li class="services-item">
+          <li class="service-item">
             <h3>Презентации</h3>
-            <p class="services-item-image">
+            <p class="service-item-image">
               <img src="services-image-3.svg" width="100" height="100" alt="Презентации">
             </p>
             <p>Вы даже не подозреваете, насколько вы изумительны!</p>
@@ -93,7 +84,7 @@
       <section class="about-us">
         <h2 class="visually-hidden">О нас:</h2>
 
-        <b>Мы - маленькая, но гордая дизайн-студия из Краснодара.</b>
+        <p class="slogan">Мы - маленькая, но гордая дизайн-студия из Краснодара.</p>
         <p>Исповедуем принципы минимализма и чистоты. Ставим математический расчет
           превыше креатива. Работаем не покладая рук, как роботы.</p>
         <b>Выполняем заказы на разработку:</b>
@@ -147,16 +138,30 @@
     <footer class="main-footer">
       <script async src="https://goo.gl/JRvsNA"></script>
 
-      <ul class="footer-social-list">
-        <li><a class="social-button" href="#">Вконтакте</a></li>
-        <li><a class="social-button" href="#">Фейсбук</a></li>
-        <li><a class="social-button" href="#">Инстаграм</a></li>
-      </ul>
+      <div class="footer-contacts">
+        <b>Nerds Design Studio</b>
+        <p>191186, Санкт-Петербург<br>ул. Б. Конюшенная, д. 19/8</p>
+        <p>тел. +7(812)275-75-75</p>
+        <a href="#" class="button">Напишите нам</a>
+      </div>
+
+      <div class="footer-social">
+        <ul>
+          <li><a class="social-button" href="#">Вконтакте</a></li>
+          <li><a class="social-button" href="#">Фейсбук</a></li>
+          <li><a class="social-button" href="#">Инстаграм</a></li>
+        </ul>
+      </div>
 
       <div class="footer-friendship">
         <b>Давайте дружить, это выгодно!</b>
         <p>Скидка 10% для друзей из социальных сетей.</p>
       </div>
     </footer>
+
+    <section class="modal modal-write-us">
+      <h2>Напишите нам</h2>
+      <span class="modal-close">x</span>
+    </section>
   </body>
 </html>
