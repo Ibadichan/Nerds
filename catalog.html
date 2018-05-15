@@ -16,7 +16,9 @@
           <li class="site-navigation-current"><a href="catalog.html">Магазин</a></li>
           <li><a href="#">Контакты</a></li>
         </ul>
-        <a class="basket" href="#">Корзина</a>
+        <ul class="user-navigation">
+          <li class="basket"><a href="#">Корзина</a></li>
+        </ul>
       </nav>
     </header>
 
@@ -25,79 +27,133 @@
 
       <section class="filters">
         <h2 class="visually-hidden">Фильтр шаблонов</h2>
+
+        <form class="filter" action="/filter" method="GET">
+          <fieldset>
+            <legend>Сетка:</legend>
+            <ul>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-radio" type="radio"
+                name="grid" value="adaptive" id="filter-adaptive">
+                <label for="filter-adaptive">Адаптивная</label>
+              </li>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-radio" type="radio"
+                name="grid" value="fixed" id="filter-fixed">
+                <label for="filter-fixed">Фиксированная</label>
+              </li>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-radio" type="radio"
+                name="grid" value="flexible" id="filter-flexible">
+                <label for="filter-flexible">Резиновая</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <legend>Особенности:</legend>
+            <ul>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox"
+                name="slider" id="filter-slider">
+                <label for="filter-slider">Слайдер</label>
+              </li>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox"
+                name="block-of-advantages" id="filter-block-of-advantages">
+                <label for="filter-block-of-advantages">Блок преимуществ</label>
+              </li>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox"
+                name="news" id="filter-news">
+                <label for="filter-news">Новости</label>
+              </li>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox"
+                name="gallery" id="filter-gallery">
+                <label for="filter-gallery">Галерея</label>
+              </li>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox"
+                name="basket" id="filter-basket">
+                <label for="filter-basket">Корзина</label>
+              </li>
+            </ul>
+          </fieldset>
+          <button class="filter-button" type="submit">Показать</button>
+        </form>
       </section>
 
       <section class="templates">
         <h2 class="visually-hidden">Шаблоны:</h2>
 
         <div class="sorting">
-          <b>СОРТИРОВАТЬ:</b>
+          <b>Сортировать:</b>
           <ul class="sorting-by-list">
             <li><a href="#">По цене</a></li>
             <li><a href="#">По типу</a></li>
             <li><a href="#">По названию</a></li>
+            <li><a class="sort-by-descending" href="#">Сортировать по убыванию</a></li>
+            <li><a class="sort-by-ascending" href="#">Сортировать по возростанию</a></li>
           </ul>
-          <span class="sort-by-descending">Сортировать по убыванию</span>
-          <span class="sort-by-ascending">Сортировать по возростанию</span>
         </div>
 
         <ul class="templates-list">
           <li class="template-item">
-            <h3>Sedona</h3>
             <p class="template-item-image">
               <img src="img/sedona.png" alt="Шаблон Sedona" width="360" height="576">
             </p>
             <div class="template-item-info">
+              <h3>Sedona</h3>
               <p>Информационный сайт для туристов</p>
               <a href="#">9 900 руб.</a>
             </div>
           </li>
           <li class="template-item">
-            <h3>Pink App</h3>
             <p class="template-item-image">
               <img src="img/pink.png" alt="Шаблон Pink" width="360" height="576">
             </p>
             <div class="template-item-info">
+              <h3>Pink App</h3>
               <p>Продуктовый лендинг приложения для iOS и Android</p>
               <a href="#">9 900 руб.</a>
             </div>
           </li>
           <li class="template-item">
-            <h3>Barbershop</h3>
             <p class="template-item-image">
               <img src="img/barbershop.png" alt="Шаблон Barbershop" width="360" height="576">
             </p>
             <div class="template-item-info">
+              <h3>Barbershop</h3>
               <p>Сайт салоны красоты. Для мужчин, да.</p>
               <a href="#">9 900 руб.</a>
             </div>
           </li>
           <li class="template-item">
-            <h3>MISHKA</h3>
             <p class="template-item-image">
               <img src="img/mishka.png" alt="Шаблон Mishka" width="360" height="576">
             </p>
             <div class="template-item-info">
+              <h3>Mishka</h3>
               <p>Интернет-магазин вязаных игрушек</p>
-              <a href="#">9 900 руб..</a>
+              <a href="#">9 900 руб.</a>
             </div>
           </li>
           <li class="template-item">
-            <h3>A Plus</h3>
             <p class="template-item-image">
               <img src="img/aplus.png" alt="Шаблон Aplus" width="360" height="576">
             </p>
             <div class="template-item-info">
+              <h3>A Plus</h3>
               <p>Лендинг курсов повышения квалификации</p>
               <a href="#">9 900 руб.</a>
             </div>
           </li>
           <li class="template-item">
-            <h3>КВАСТ</h3>
             <p class="template-item-image">
               <img src="img/kvast.png" alt="Шаблон Kvas" width="360" height="576">
             </p>
             <div class="template-item-info">
+              <h3>Кваст</h3>
               <p>Промо-сайт производителя крафтового кваса</p>
               <a href="#">9 900 руб.</a>
             </div>
@@ -105,16 +161,16 @@
         </ul>
 
         <ul class="pagination-list">
-          <li class="pagination-item-current"><a href="#">1</a></li>
+          <li class="pagination-item-current"><a>1</a></li>
           <li><a href="#">2</a></li>
           <li><a href="#">3</a></li>
-          <li><a href="#">следующая</a></li>
+          <li><a href="#">Cледующая</a></li>
         </ul>
       </section>
     </main>
 
     <footer class="main-footer">
-      <script async src="https://goo.gl/JRvsNA"></script>
+      <div id="map" style="height: 400px; background: grey;"></div>
 
       <div class="footer-contacts">
         <b>NЁRDS DESIGN STUDIO</b>
@@ -141,7 +197,27 @@
 
     <section class="modal modal-write-us">
       <h2>Напишите нам</h2>
-      <span class="modal-close">x</span>
+
+      <form class="write-us-form" action="/write_us" method="POST">
+        <p class="write-us-item">
+          <label for="write-us-name">Ваше имя:</label>
+          <input id="write-us-name" type="text" name="name" placeholder="Имя Фамилия">
+        </p>
+        <p class="write-us-item">
+          <label for="write-us-email">Ваш e-mail:</label>
+          <input id="write-us-email" type="email" name="email" placeholder="email@example.com">
+        </p>
+        <p class="write-us-item">
+          <label for="write-us-text">Текст письма:</label>
+          <textarea id="write-us-text" name="text" placeholder="В свободной форме"></textarea>
+        </p>
+        <button class="button" type="submit">Отправить</button>
+      </form>
+      <button class="modal-close" type="button">Закрыть</button>
     </section>
+
+    <script src="js/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBtUzMHTT-hay1D1I6prKCus8IEDdQyNI&amp;callback=initMap">
+    </script>
   </body>
 </html>
