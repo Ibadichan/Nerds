@@ -1,0 +1,36 @@
+.main-header {
+  @include font_style(false, 30px, false, 500);
+  text-transform: uppercase;
+  background-color: $header_background;
+}
+
+.main-header-logo {
+  &:hover, &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.site-navigation,
+.user-navigation {
+  list-style: none;
+
+  a {
+    color: $black;
+
+    &:hover, &:focus {
+      color: $header_links_color;
+    }
+
+    &:active {
+      color: $disabled_black;
+    }
+  }
+}
+
+.site-navigation-current {
+  border-bottom: 2px solid $header_links_color;
+}

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Нёрдс</title>
+    <link href="stylesheets/main.css" rel="stylesheet">
   </head>
   <body>
     <header class="main-header">
@@ -33,19 +34,19 @@
             <b>Долго, дорого, скрупулезно.</b>
             <p>Математически выверенный дизайн
                для вашего сайта или мобильного приложения.</p>
-            <a class="button" href="#">Узнать больше</a>
+            <a class="button button-red" href="#">Узнать больше</a>
           </li>
           <li class="promo-item">
             <b>Любим математику как никто другой</b>
             <p>Никакого креатива, только математические формулы
                для расчета идеальных пропорций.</p>
-            <a class="button" href="#">Узнать больше</a>
+            <a class="button button-red" href="#">Узнать больше</a>
           </li>
           <li class="promo-item">
             <b>Только ночь, только хардкор</b>
             <p>Работать днем, как все? Мы против этого.
                Ближе к полуночи работа только начинается.</p>
-            <a class="button" href="#">Узнать больше</a>
+            <a class="button button-red" href="#">Узнать больше</a>
           </li>
         </ul>
       </section>
@@ -58,19 +59,19 @@
             <h3>Веб-сайты</h3>
             <p><img src="img/web-sites.png" alt="веб-сайты" height="146" width="300"></p>
             <p>Мир никогда не будет прежним после того как увидит ваш сайт!</p>
-            <a class="button" href="#">Заказать</a>
+            <a class="button button-red" href="#">Заказать</a>
           </li>
           <li class="service-item">
             <h3>Приложения</h3>
             <p><img src="img/apps.png" alt="приложения" height="146" width="300"></p>
             <p>Покорите топ-10 приложений в AppStore и Google Play</p>
-            <a class="button" href="#">Заказать</a>
+            <a class="button button-green" href="#">Заказать</a>
           </li>
           <li class="service-item">
             <h3>Презентации</h3>
             <p><img src="img/presentations.png" alt="презентации" height="146" width="300"></p>
             <p>Вы даже не подозреваете, насколько вы изумительны!</p>
-            <a class="button" href="#">Заказать</a>
+            <a class="button button-yellow" href="#">Заказать</a>
           </li>
         </ul>
       </section>
@@ -81,7 +82,7 @@
         <p class="about-us-slogan">Мы — маленькая, но гордая дизайн-студия из Краснодара.</p>
         <p>Исповедуем принципы минимализма и чистоты. Ставим математический расчет
           превыше креатива. Работаем не покладая рук, как роботы.</p>
-        <b>Выполняем заказы на разработку:</b>
+        <b class="make-orders-for">Выполняем заказы на разработку:</b>
         <ul class="orders-list">
           <li>Веб-сайтов любой сложности</li>
           <li>Мобильных приложений для iOS и Android</li>
@@ -96,9 +97,9 @@
           <caption>с 2004 года любим точность во всем:</caption>
           <thead>
             <tr>
-              <th>146%</th>
-              <th>100%</th>
-              <th>50%</th>
+              <th>146<sup>%</sup></th>
+              <th>100<sup>%</sup></th>
+              <th>50<sup>%</sup></th>
             </tr>
           </thead>
           <tbody>
@@ -142,16 +143,14 @@
           191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8<br>
           <br>тел. +7 (812) 275-75-75
         </p>
-        <a href="#" class="button">Напишите нам</a>
+        <a href="#" class="button button-red">Напишите нам</a>
       </div>
 
-      <div class="footer-social">
-        <ul>
-          <li><a class="social-button" href="#">Вконтакте</a></li>
-          <li><a class="social-button" href="#">Фейсбук</a></li>
-          <li><a class="social-button" href="#">Инстаграм</a></li>
-        </ul>
-      </div>
+      <ul class="footer-social">
+        <li><a class="social-button" href="#">Вконтакте</a></li>
+        <li><a class="social-button" href="#">Фейсбук</a></li>
+        <li><a class="social-button" href="#">Инстаграм</a></li>
+      </ul>
 
       <div class="footer-friendship">
         <b>Давайте дружить, это выгодно!</b>
@@ -165,21 +164,21 @@
       <form class="write-us-form" action="/write_us" method="POST">
         <p class="write-us-item">
           <label for="write-us-name">Ваше имя:</label>
-          <input id="write-us-name" type="text" name="name" placeholder="Имя Фамилия">
+          <input id="write-us-name" type="text" name="name" placeholder="Имя Фамилия" required>
         </p>
         <p class="write-us-item">
           <label for="write-us-email">Ваш e-mail:</label>
-          <input id="write-us-email" type="email" name="email" placeholder="email@example.com">
+          <input id="write-us-email" type="email" name="email" placeholder="email@example.com" required>
         </p>
         <p class="write-us-item">
           <label for="write-us-text">Текст письма:</label>
-          <textarea id="write-us-text" name="text" placeholder="В свободной форме"></textarea>
+          <textarea id="write-us-text" name="text" placeholder="В свободной форме" required></textarea>
         </p>
-        <button class="button" type="submit">Отправить</button>
+        <button class="button button-red" type="submit">Отправить</button>
       </form>
       <button class="modal-close" type="button">Закрыть</button>
     </section>
-    
+
     <script src="js/script.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBtUzMHTT-hay1D1I6prKCus8IEDdQyNI&amp;callback=initMap">
     </script>

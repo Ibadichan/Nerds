@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Нёрдс</title>
+    <link href="stylesheets/main.css" rel="stylesheet">
   </head>
   <body>
     <header class="main-header">
@@ -74,12 +75,12 @@
               </li>
               <li class="filter-option">
                 <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox"
-                name="basket" id="filter-basket">
+                name="basket" id="filter-basket" disabled>
                 <label for="filter-basket">Корзина</label>
               </li>
             </ul>
           </fieldset>
-          <button class="filter-button" type="submit">Показать</button>
+          <button class="button button-filter" type="submit">Показать</button>
         </form>
       </section>
 
@@ -105,7 +106,7 @@
             <div class="template-item-info">
               <h3>Sedona</h3>
               <p>Информационный сайт для туристов</p>
-              <a href="#">9 900 руб.</a>
+              <a href="#" class="button button-red">9 900 руб.</a>
             </div>
           </li>
           <li class="template-item">
@@ -115,7 +116,7 @@
             <div class="template-item-info">
               <h3>Pink App</h3>
               <p>Продуктовый лендинг приложения для iOS и Android</p>
-              <a href="#">9 900 руб.</a>
+              <a href="#" class="button button-red">9 900 руб.</a>
             </div>
           </li>
           <li class="template-item">
@@ -125,7 +126,7 @@
             <div class="template-item-info">
               <h3>Barbershop</h3>
               <p>Сайт салоны красоты. Для мужчин, да.</p>
-              <a href="#">9 900 руб.</a>
+              <a href="#" class="button button-red">9 900 руб.</a>
             </div>
           </li>
           <li class="template-item">
@@ -135,7 +136,7 @@
             <div class="template-item-info">
               <h3>Mishka</h3>
               <p>Интернет-магазин вязаных игрушек</p>
-              <a href="#">9 900 руб.</a>
+              <a href="#" class="button button-red">9 900 руб.</a>
             </div>
           </li>
           <li class="template-item">
@@ -145,7 +146,7 @@
             <div class="template-item-info">
               <h3>A Plus</h3>
               <p>Лендинг курсов повышения квалификации</p>
-              <a href="#">9 900 руб.</a>
+              <a href="#" class="button button-red">9 900 руб.</a>
             </div>
           </li>
           <li class="template-item">
@@ -155,13 +156,13 @@
             <div class="template-item-info">
               <h3>Кваст</h3>
               <p>Промо-сайт производителя крафтового кваса</p>
-              <a href="#">9 900 руб.</a>
+              <a href="#" class="button button-red">9 900 руб.</a>
             </div>
           </li>
         </ul>
 
         <ul class="pagination-list">
-          <li class="pagination-item-current"><a>1</a></li>
+          <li><a class="pagination-item-current">1</a></li>
           <li><a href="#">2</a></li>
           <li><a href="#">3</a></li>
           <li><a href="#">Cледующая</a></li>
@@ -178,16 +179,14 @@
           191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8<br>
           <br>тел. +7 (812) 275-75-75
         </p>
-        <a href="#" class="button">Напишите нам</a>
+        <a href="#" class="button button-red">Напишите нам</a>
       </div>
 
-      <div class="footer-social">
-        <ul>
-          <li><a class="social-button" href="#">Вконтакте</a></li>
-          <li><a class="social-button" href="#">Фейсбук</a></li>
-          <li><a class="social-button" href="#">Инстаграм</a></li>
-        </ul>
-      </div>
+      <ul class="footer-social">
+        <li><a class="social-button" href="#">Вконтакте</a></li>
+        <li><a class="social-button" href="#">Фейсбук</a></li>
+        <li><a class="social-button" href="#">Инстаграм</a></li>
+      </ul>
 
       <div class="footer-friendship">
         <b>Давайте дружить, это выгодно!</b>
@@ -201,17 +200,17 @@
       <form class="write-us-form" action="/write_us" method="POST">
         <p class="write-us-item">
           <label for="write-us-name">Ваше имя:</label>
-          <input id="write-us-name" type="text" name="name" placeholder="Имя Фамилия">
+          <input id="write-us-name" type="text" name="name" placeholder="Имя Фамилия" required>
         </p>
         <p class="write-us-item">
           <label for="write-us-email">Ваш e-mail:</label>
-          <input id="write-us-email" type="email" name="email" placeholder="email@example.com">
+          <input id="write-us-email" type="email" name="email" placeholder="email@example.com" required>
         </p>
         <p class="write-us-item">
           <label for="write-us-text">Текст письма:</label>
-          <textarea id="write-us-text" name="text" placeholder="В свободной форме"></textarea>
+          <textarea id="write-us-text" name="text" placeholder="В свободной форме" required></textarea>
         </p>
-        <button class="button" type="submit">Отправить</button>
+        <button class="button button-red" type="submit">Отправить</button>
       </form>
       <button class="modal-close" type="button">Закрыть</button>
     </section>

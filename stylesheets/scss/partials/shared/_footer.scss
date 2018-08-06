@@ -1,0 +1,23 @@
+.footer-contacts {
+  b {
+    @include font_style(18px, 30px);
+  }
+
+  p {
+    line-height: 18px;
+  }
+}
+
+.footer-social {
+  list-style: none;
+}
+
+.footer-friendship {
+  b {
+    @include font_style(36px, 36px);
+  }
+
+  p {
+    line-height: 22px;
+  }
+}

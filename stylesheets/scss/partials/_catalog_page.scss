@@ -1,0 +1,110 @@
+.page-title {
+  @include font_style(55px, 55px, false, 500);
+  text-align: center;
+
+  background-color: $header_background;
+}
+
+.filter {
+  legend {
+    @include font_style(18px, 30px, false, 700);
+    text-transform: uppercase;
+  }
+
+  fieldset {
+    border: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .filter-option {
+    line-height: 20px;
+  }
+}
+
+.filter-input + label {
+  color: $filter_label_color;
+}
+
+.filter-input:hover + label,
+.filter-input:focus + label {
+  color: $black;
+}
+
+.filter-input:disabled + label {
+  color: $disabled_black;
+}
+
+.sorting {
+  b {
+    @include font_style(18px, 18px, false, 700);
+    text-transform: uppercase;
+  }
+
+  .sorting-by-list {
+    list-style: none;
+  }
+}
+
+.sorting-by-list a {
+  @include font_style(14px, 18px, $disabled_black);
+  text-transform: uppercase;
+
+  &:hover, &:focus {
+    color: $sorting_link_hover;
+  }
+
+  &:active {
+    color: $black;
+  }
+}
+
+.templates-list {
+  list-style: none;
+}
+
+.template-item-info {
+  text-align: center;
+  background-color: $catalog_item_background;
+
+  h3 {
+    @include font_style(18px, 30px, false, 700);
+    text-transform: uppercase;
+  }
+
+  p {
+    line-height: 18px;
+    color: $catalog_item_text_color;
+  }
+}
+
+.pagination-list {
+  list-style: none;
+
+   a {
+    @include font_style(false, 18px, $black, 500);
+    text-align: center;
+    text-transform: uppercase;
+
+    border-radius: 2px;
+    background-color: $pagination_item_default;
+
+    &:not(.pagination-item-current):hover,
+    &:not(.pagination-item-current):focus {
+      background-color: $pagination_item_hover;
+    }
+
+    &:not(.pagination-item-current):active {
+      color: $disabled_black;
+      background-color: $pagination_item_active;
+      box-shadow: inset 0 3px 0 0 $pagination_item_active_shadow;
+    }
+
+    &.pagination-item-current {
+      background-color: $white;
+      border: 2px solid $pagination_item_current_color;
+     }
+   }
+}

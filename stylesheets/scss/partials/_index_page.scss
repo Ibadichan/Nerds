@@ -1,0 +1,77 @@
+.promo-slider {
+  background-color: $header_background;
+}
+
+.promo-list {
+  list-style: none;
+}
+
+.promo-item b {
+  @include font_style(55px, 55px, false, 500);
+}
+
+.our-services {
+  border-bottom: 2px solid $services_border;
+}
+
+.services-list {
+  list-style: none;
+}
+
+.service-item h3 {
+  @include font_style(24px, 30px);
+  text-transform: uppercase;
+}
+
+.about-us-slogan {
+  @include font_style(45px, 45px, false, 500);
+}
+
+.make-orders-for {
+  text-transform: uppercase;
+}
+
+.orders-list {
+  list-style: none;
+}
+
+.work-statistics-table {
+  caption {
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  th {
+    @include font_style(45px, 10px, false, 700);
+  }
+
+  td {
+    line-height: 18px;
+  }
+
+  sup {
+    font-weight: 400;
+  }
+}
+
+.partners {
+  border-top: 2px solid $partners_border;
+  border-bottom: 2px solid $partners_border;
+}
+
+.partners-list {
+  list-style: none;
+}
+
+.partner-item a {
+  opacity: 0.2;
+
+  &:hover, &:focus {
+    opacity: initial;
+  }
+
+  &:active {
+    opacity: 0.1;
+  }
+}
