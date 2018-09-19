@@ -1,34 +1,44 @@
-.modal-write-us h2 {
-  @include font_style(45px, 45px, false, 500);
-}
+.modal-write-us {
+  display: none;
 
-.write-us-item label {
-  @include font_style(false, 18px, false, 700);
-}
-
-.write-us-item input,
-.write-us-item textarea {
-  font: inherit;
-
-  line-height: 18px;
-
-  border: 2px solid $input_border_default;
-  border-radius: 4px;
-  outline: none;
-
-  @include placehoder_style($placehoder_color_default);
-
-  &:hover {
-    border-color: $disabled_black;
+  h2 {
+    @include font_style(45px, 45px, false, 500);
   }
 
-  &:focus {
-    border-color: $black;
-    @include placehoder_style($placehoder_color_focus);
+  label {
+    @include font_style(false, 18px, false, 700);
   }
 
-  &:focus:required:invalid {
-    border-color: $placehoder_color_required;
-    @include placehoder_style($placehoder_color_required);
+  input, textarea {
+    font: inherit;
+
+    line-height: 18px;
+
+    border: 2px solid $input_border_default;
+    border-radius: 4px;
+    outline: none;
+
+    &::placehoder {
+      color: $placehoder_color_default;
+    }
+
+    &:hover {
+      border-color: $disabled_black;
+    }
+
+    &:focus {
+      border-color: $black;
+
+      &::placehoder {
+        color: $placehoder_color_focus;
+      }
+    }
+
+    &:focus:required:invalid {
+      border-color: $placehoder_color_required;
+      &::placehoder {
+        color: $placehoder_color_required;
+      }
+    }
   }
 }

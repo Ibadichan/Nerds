@@ -5,6 +5,7 @@ $disabled_white: rgba($color: $white, $alpha: 0.3);
 
 $header_background:  #eeeeee;
 $header_links_color: #fb565a;
+$slider_control: #c1c1c1;
 
 $input_border_default: rgba($color: $black, $alpha: 0.1);
 $placehoder_color_focus: rgb(68, 68, 68);
@@ -39,17 +40,12 @@ $pagination_item_current_color: #dbdbdb;
 
 $services_border: #eeeeee;
 $partners_border: $services_border;
+$index_columns_border: $partners_border;
 $filter_label_color: #4d4d4d;
 $sorting_link_hover: rgba(0, 0, 0, 0.6);
 $catalog_item_background: #eeeeee;
 $catalog_item_text_color: rgb(102, 102, 102);
-
-@mixin placehoder_style($color) {
-  &::-webkit-input-placeholder { color: $color; }
-  &::-moz-placeholder          { color: $color; }
-  &:-ms-input-placeholder      { color: $color; }
-  &:-moz-placeholder           { color: $color; }
-}
+$catalog_item_image_border: rgba(0, 1, 1, 0.1);
 
 @mixin font_style($font_size, $line_height, $color: false, $font_weight: false) {
   @if $font_size { font-size: $font_size; }

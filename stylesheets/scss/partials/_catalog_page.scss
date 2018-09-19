@@ -1,8 +1,21 @@
 .page-title {
+  margin: 0;
+  margin-bottom: 55px;
+  padding-bottom: 100px;
+
   @include font_style(55px, 55px, false, 500);
   text-align: center;
 
   background-color: $header_background;
+}
+
+.catalog-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters {
+  width: 260px;
 }
 
 .filter {
@@ -38,12 +51,20 @@
 }
 
 .sorting {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 95px;
+
   b {
+    width: 135px;
     @include font_style(18px, 18px, false, 700);
     text-transform: uppercase;
   }
 
   .sorting-by-list {
+    width: 360px;
+    margin: 0;
+    padding: 0;
     list-style: none;
   }
 }
@@ -61,11 +82,58 @@
   }
 }
 
+.templates {
+  width: 760px;
+}
+
 .templates-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 60px;
+  padding: 0;
   list-style: none;
+
+  .template-item {
+    position: relative;
+    width: 360px;
+    margin-bottom: 75px;
+
+    &:nth-child(odd) {
+      margin-right: 40px;
+    }
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: 0;
+      width: 360px;
+      height: 40px;
+      background-image: url("../img/browser.svg");
+      background-color: $white;
+    }
+
+    &:hover::before {
+      background-image: url("../img/browser-hover.svg");
+    }
+  }
+}
+
+.template-item-image {
+  width: 360px;
+  height: 577px;
+  margin: 0;
+  border: 1px solid $catalog_item_image_border;
+  border-top: 0;
 }
 
 .template-item-info {
+  display: none;
   text-align: center;
   background-color: $catalog_item_background;
 
@@ -81,6 +149,8 @@
 }
 
 .pagination-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
 
    a {

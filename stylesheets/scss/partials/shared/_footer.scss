@@ -1,4 +1,20 @@
+.main-footer {
+  position: relative;
+  padding-bottom: 70px;
+}
+
+.footer-columns {
+  display: flex;
+}
+
 .footer-contacts {
+  position: absolute;
+  top: 55px;
+  left: 140px;
+  width: 320px;
+  height: 310px;
+  background-color: $white;
+
   b {
     @include font_style(18px, 30px);
   }
@@ -9,10 +25,16 @@
 }
 
 .footer-social {
+  width: 260px;
+  margin: 0;
+  padding: 0;
+  margin-right: 140px;
   list-style: none;
 }
 
 .footer-friendship {
+  width: 560px;
+
   b {
     @include font_style(36px, 36px);
   }
@@ -20,4 +42,10 @@
   p {
     line-height: 22px;
   }
+}
+
+.google-map {
+  height: 400px;
+  margin-bottom: 70px;
+  background: grey url("../img/map.png") 50% 50%;
 }

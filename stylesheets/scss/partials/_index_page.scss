@@ -1,26 +1,113 @@
 .promo-slider {
+  padding-bottom: 80px;
+  margin-bottom: 80px;
   background-color: $header_background;
+
+  .container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  input[type=radio] {
+    display: none;
+  }
+
+  .slider-controls {
+    position: absolute;
+    right: 50%;
+    bottom: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90px;
+    height: 20px;
+    transform: translateX(50%);
+  }
+}
+
+.slider-controls label {
+  width: 9px;
+  height: 9px;
+  background-color: $white;
+  border: 2px solid $white;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px $white;
+  cursor: pointer;
+}
+
+#slide-1:checked ~ .slider-controls label[for=slide-1],
+#slide-2:checked ~ .slider-controls label[for=slide-2],
+#slide-3:checked ~ .slider-controls label[for=slide-3], {
+  border-color: $slider_control;
+}
+
+#slide-1:checked ~ .promo-list {
+  transform: translateX(0);
+}
+
+#slide-2:checked ~ .promo-list {
+  transform: translateX(-1160px);
+}
+
+#slide-3:checked ~ .promo-list {
+  transform: translateX(-2320px);
 }
 
 .promo-list {
+  display: flex;
+  width: 3480px;
+  margin: 0;
+  padding: 0;
   list-style: none;
 }
 
-.promo-item b {
-  @include font_style(55px, 55px, false, 500);
+.promo-item {
+  width: 1160px;
+
+  .promo-item-header {
+    width: 515px;
+    margin: 0;
+    @include font_style(55px, 55px, false, 500);
+  }
+
+  .promo-item-text {
+    width: 410px;
+    margin: 0;
+  }
 }
 
 .our-services {
+  padding-bottom: 80px;
   border-bottom: 2px solid $services_border;
 }
 
 .services-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
   list-style: none;
+
+  .service-item {
+    width: 300px;
+  }
 }
 
 .service-item h3 {
   @include font_style(24px, 30px);
   text-transform: uppercase;
+}
+
+.index-columns {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 80px;
+  padding-bottom: 75px;
+  border-bottom: 1px solid $index_columns_border;
+}
+
+.about-us {
+  width: 660px;
 }
 
 .about-us-slogan {
@@ -33,6 +120,10 @@
 
 .orders-list {
   list-style: none;
+}
+
+.work-statistics {
+  width: 360px;
 }
 
 .work-statistics-table {
@@ -56,12 +147,20 @@
 }
 
 .partners {
-  border-top: 2px solid $partners_border;
-  border-bottom: 2px solid $partners_border;
+  border-bottom: 1px solid $partners_border;
 }
 
 .partners-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
   list-style: none;
+
+  .partner-item {
+    width: 260px;
+    height: 180px;
+  }
 }
 
 .partner-item a {

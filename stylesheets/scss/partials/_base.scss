@@ -1,6 +1,15 @@
 @import "shared/storage";
 
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body {
+  min-width: 1200px;
   margin: 0;
   padding: 0;
 
@@ -8,10 +17,27 @@ body {
   color: $black;
 
   background: $white;
+
+  main {
+    margin-bottom: 80px;
+  }
+
+  &.catalog-page main {
+    margin-bottom: 60px;
+  }
 }
 
 a {
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: 1160px;
+  margin: 0 auto;
 }
 
 .button {
@@ -83,4 +109,12 @@ a {
       box-shadow: inset 0 3px 0 0 $button_filter_active_shadow;
     }
   }
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
 }
