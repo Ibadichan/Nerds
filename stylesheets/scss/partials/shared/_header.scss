@@ -1,6 +1,5 @@
 .main-header {
   padding-top: 50px;
-  padding-bottom: 85px;
   @include font_style(false, 30px, false, 500);
   text-transform: uppercase;
   background-color: $header_background;
@@ -27,14 +26,39 @@
 
 .site-navigation {
   width: 440px;
+
+  li:not(:nth-child(4n)) {
+    margin-right: 45px;
+  }
+
+  &-current {
+    border-bottom: 2px solid $header_links_color;
+  }
 }
 
 .user-navigation {
   width: 115px;
 }
 
+.basket a {
+  position: relative;
+  padding-left: 40px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background-image: url('../img/basket.svg');
+  }
+}
+
 .site-navigation,
 .user-navigation {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -50,8 +74,4 @@
       color: $disabled_black;
     }
   }
-}
-
-.site-navigation-current {
-  border-bottom: 2px solid $header_links_color;
 }

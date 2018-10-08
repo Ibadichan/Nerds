@@ -32,6 +32,11 @@ $button_filter_hover:   #dfdfdf;
 $button_filter_active:  #d5d5d5;
 $button_filter_active_shadow: #c0c0c0;
 
+$social_button_default: #e1e1e1;
+$social_button_hover: #e74246;
+$social_button_active: #d7363a;
+$social_button_active_shadow: #c13134;
+
 $pagination_item_default: $button_filter_default;
 $pagination_item_hover: $button_filter_hover;
 $pagination_item_active: $button_filter_active;
@@ -46,10 +51,18 @@ $sorting_link_hover: rgba(0, 0, 0, 0.6);
 $catalog_item_background: #eeeeee;
 $catalog_item_text_color: rgb(102, 102, 102);
 $catalog_item_image_border: rgba(0, 1, 1, 0.1);
+$order_item_before: $header_links_color;
 
 @mixin font_style($font_size, $line_height, $color: false, $font_weight: false) {
   @if $font_size { font-size: $font_size; }
   @if $line_height { line-height: $line_height; }
   @if $color { color: $color; }
   @if $font_weight { font-weight: $font_weight; }
+}
+
+@mixin calculate($property, $expression, $default) {
+  #{$property}: $default;
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: calc(#{$expression});
 }

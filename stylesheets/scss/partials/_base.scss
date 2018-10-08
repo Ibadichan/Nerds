@@ -33,6 +33,7 @@ a {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 .container {
@@ -41,7 +42,8 @@ img {
 }
 
 .button {
-  font: inherit;
+  display: inline-block;
+  padding: 15px;
 
   line-height: 18px;
   color: $white;
@@ -50,7 +52,7 @@ img {
   text-align: center;
 
   border: none;
-  border-radius: 2px;
+  border-radius: 3px;
 
   &:active {
     color: $disabled_white;
@@ -111,10 +113,18 @@ img {
   }
 }
 
-.visually-hidden {
+.visually-hidden:not(:focus):not(:active),
+input[type=checkbox].visually-hidden,
+input[type=radio].visually-hidden {
   position: absolute;
-  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
   clip: rect(0 0 0 0);
-  height: 1px; width: 1px;
-  margin: -1px; padding: 0; border: 0;
+  overflow: hidden;
 }
