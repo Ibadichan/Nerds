@@ -46,12 +46,28 @@ $pagination_item_current_color: #dbdbdb;
 $services_border: #eeeeee;
 $partners_border: $services_border;
 $index_columns_border: $partners_border;
-$filter_label_color: #4d4d4d;
+$filter_label: #4d4d4d;
 $sorting_link_hover: rgba(0, 0, 0, 0.6);
 $catalog_item_background: #eeeeee;
 $catalog_item_text_color: rgb(102, 102, 102);
-$catalog_item_image_border: rgba(0, 1, 1, 0.1);
+$catalog_item_image_border: #ededed;
 $order_item_before: $header_links_color;
+
+$range_container: #ededed;
+$range_input: $range_container;
+$range_text: rgb(45, 54, 59);
+$filled_progress: #00ca74;
+$empty_progress: #d7dbdd;
+$range_control_shadow: #cccccc;
+$range_control_point: #ababab;
+
+$filter_input: #a5a5a5;
+$filter_input_hover: #4d4d4d;
+$filter_input_disabled: #ededed;
+
+$sort_arrow: #ededed;
+$sort_arrow_hover: #a5a5a5;
+$sort_arrow_active: $black;
 
 @mixin font_style($font_size, $line_height, $color: false, $font_weight: false) {
   @if $font_size { font-size: $font_size; }

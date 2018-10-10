@@ -11,6 +11,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
     <link href="stylesheets/main.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.0.0/nouislider.min.css" rel="stylesheet">
   </head>
   <body class="catalog-page">
     <header class="main-header">
@@ -38,12 +39,31 @@
           <h2 class="visually-hidden">Фильтр шаблонов</h2>
 
           <form class="filter" action="/filter" method="GET">
-            <fieldset>
+            <fieldset class="cost-section">
+              <legend>Стоимость:</legend>
+
+              <div class="range-container">
+                <div class="two-range-slider" id="two-range-slider"></div>
+              </div>
+
+              <div class="price-limits">
+                <p>
+                  <label for="min-price">От</label>
+                  <input type="text" name="min-price" id="min-price">
+                </p>
+                <p>
+                  <label for="max-price">До</label>
+                  <input type="text" name="max-price" id="max-price">
+                </p>
+              </div>
+            </fieldset>
+
+            <fieldset class="grid-section">
               <legend>Сетка:</legend>
               <ul>
                 <li class="filter-option">
                   <input class="visually-hidden filter-input filter-input-radio" type="radio"
-                  name="grid" value="adaptive" id="filter-adaptive">
+                  name="grid" value="adaptive" id="filter-adaptive" checked>
                   <label for="filter-adaptive">Адаптивная</label>
                 </li>
                 <li class="filter-option">
@@ -58,12 +78,12 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset>
+            <fieldset class="features-section">
               <legend>Особенности:</legend>
               <ul>
                 <li class="filter-option">
                   <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox"
-                  name="slider" id="filter-slider">
+                  name="slider" id="filter-slider" checked>
                   <label for="filter-slider">Слайдер</label>
                 </li>
                 <li class="filter-option">
@@ -73,7 +93,7 @@
                 </li>
                 <li class="filter-option">
                   <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox"
-                  name="news" id="filter-news">
+                  name="news" id="filter-news" checked>
                   <label for="filter-news">Новости</label>
                 </li>
                 <li class="filter-option">
@@ -83,7 +103,7 @@
                 </li>
                 <li class="filter-option">
                   <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox"
-                  name="basket" id="filter-basket" disabled>
+                  name="basket" id="filter-basket">
                   <label for="filter-basket">Корзина</label>
                 </li>
               </ul>
@@ -98,11 +118,19 @@
           <div class="sorting">
             <b>Сортировать:</b>
             <ul class="sorting-by-list">
-              <li><a href="#">По цене</a></li>
+              <li><a href="#" class="active">По цене</a></li>
               <li><a href="#">По типу</a></li>
               <li><a href="#">По названию</a></li>
-              <li><a class="sort-by-descending" href="#">Сортировать по убыванию</a></li>
-              <li><a class="sort-by-ascending" href="#">Сортировать по возростанию</a></li>
+              <li>
+                <a class="sort-by-descending active" href="#">
+                  <span class="visually-hidden">Сортировать по убыванию</span>
+                </a>
+              </li>
+              <li>
+                <a class="sort-by-ascending" href="#">
+                  <span class="visually-hidden">Сортировать по возростанию</span>
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -112,7 +140,7 @@
                 <img src="img/sedona.png" alt="Шаблон Sedona" width="360" height="576">
               </p>
               <div class="template-item-info">
-                <h3>Sedona</h3>
+                <h3><a href="#">Sedona</a></h3>
                 <p>Информационный сайт для туристов</p>
                 <a href="#" class="button button-red">9 900 руб.</a>
               </div>
@@ -122,7 +150,7 @@
                 <img src="img/pink.png" alt="Шаблон Pink" width="360" height="576">
               </p>
               <div class="template-item-info">
-                <h3>Pink App</h3>
+                <h3><a href="#">Pink App</a></h3>
                 <p>Продуктовый лендинг приложения для iOS и Android</p>
                 <a href="#" class="button button-red">9 900 руб.</a>
               </div>
@@ -132,7 +160,7 @@
                 <img src="img/barbershop.png" alt="Шаблон Barbershop" width="360" height="576">
               </p>
               <div class="template-item-info">
-                <h3>Barbershop</h3>
+                <h3><a href="#">Barbershop</a></h3>
                 <p>Сайт салоны красоты. Для мужчин, да.</p>
                 <a href="#" class="button button-red">9 900 руб.</a>
               </div>
@@ -142,7 +170,7 @@
                 <img src="img/mishka.png" alt="Шаблон Mishka" width="360" height="576">
               </p>
               <div class="template-item-info">
-                <h3>Mishka</h3>
+                <h3><a href="#">Mishka</a></h3>
                 <p>Интернет-магазин вязаных игрушек</p>
                 <a href="#" class="button button-red">9 900 руб.</a>
               </div>
@@ -152,7 +180,7 @@
                 <img src="img/aplus.png" alt="Шаблон Aplus" width="360" height="576">
               </p>
               <div class="template-item-info">
-                <h3>A Plus</h3>
+                <h3><a href="#">A Plus</a></h3>
                 <p>Лендинг курсов повышения квалификации</p>
                 <a href="#" class="button button-red">9 900 руб.</a>
               </div>
@@ -162,7 +190,7 @@
                 <img src="img/kvast.png" alt="Шаблон Kvas" width="360" height="576">
               </p>
               <div class="template-item-info">
-                <h3>Кваст</h3>
+                <h3><a href="#">Кваст</a></h3>
                 <p>Промо-сайт производителя крафтового кваса</p>
                 <a href="#" class="button button-red">9 900 руб.</a>
               </div>
@@ -173,7 +201,7 @@
             <li><a class="pagination-item-current">1</a></li>
             <li><a href="#">2</a></li>
             <li><a href="#">3</a></li>
-            <li><a href="#">Cледующая</a></li>
+            <li><a class="pagination-next" href="#">Cледующая</a></li>
           </ul>
         </section>
       </div>
@@ -185,7 +213,7 @@
       <div class="footer-contacts">
         <b>NЁRDS DESIGN STUDIO</b>
         <p class="our-address">
-          191186, Санкт-Петербург,<br>
+          191186, Санкт-Петербург,
           ул. Б. Конюшенная, д. 19/8
         </p>
         <p class="our-phone">тел. +7 (812) 275-75-75</p>
@@ -194,9 +222,15 @@
 
       <div class="footer-columns container">
         <ul class="footer-social">
-          <li><a class="social-button" href="#">Вконтакте</a></li>
-          <li><a class="social-button" href="#">Фейсбук</a></li>
-          <li><a class="social-button" href="#">Инстаграм</a></li>
+          <li>
+            <a class="social-button vk-button" href="#"><span class="visually-hidden">Вконтакте</span></a>
+          </li>
+          <li>
+            <a class="social-button facebook-button" href="#"><span class="visually-hidden">Фейсбук</span></a>
+          </li>
+          <li>
+            <a class="social-button instagram-button" href="#"><span class="visually-hidden">Инстаграм</span></a>
+          </li>
         </ul>
 
         <div class="footer-friendship">
@@ -227,7 +261,9 @@
       <button class="modal-close" type="button">Закрыть</button>
     </section>
 
-    <script src="js/script.js"></script>
+    <script src="js/map.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.0.0/nouislider.min.js"></script>
+    <script src="js/range.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBtUzMHTT-hay1D1I6prKCus8IEDdQyNI&amp;callback=initMap">
     </script>
   </body>

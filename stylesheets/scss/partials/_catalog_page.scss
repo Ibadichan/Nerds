@@ -1,6 +1,7 @@
 .page-title {
   margin: 0;
   margin-bottom: 55px;
+  padding-top: 85px;
   padding-bottom: 100px;
 
   @include font_style(55px, 55px, false, 500);
@@ -20,65 +21,322 @@
 
 .filter {
   legend {
+    margin-bottom: 15px;
     @include font_style(18px, 30px, false, 700);
     text-transform: uppercase;
   }
 
   fieldset {
+    margin: 0;
+    padding: 0;
     border: none;
   }
 
+  .cost-section {
+    margin-bottom: 53px;
+  }
+
+  .grid-section {
+    margin-bottom: 42px;
+  }
+
+  .features-section {
+    margin-bottom: 48px;
+  }
+
   ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
   }
 
   .filter-option {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
     line-height: 20px;
+  }
+
+  .button {
+    padding-left: 80px;
+    padding-right: 80px;
+    width: 100%;
   }
 }
 
-.filter-input + label {
-  color: $filter_label_color;
+.cost-section {
+  legend {
+    margin-bottom: 50px;
+  }
+
+  .range-container {
+    position: relative;
+    margin-bottom: 15px;
+    width: 260px;
+    height: 80px;
+    background-color: $range_container;
+    border-radius: 3px;
+  }
+
+  .price-limits {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input {
+    padding: 12px 15px;
+    width: 80px;
+    text-align: center;
+    background-color: $range_input;
+    border: none;
+    border-radius: 3px;
+  }
+
+  label {
+    margin: 8px 12px 8px 0;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: $range_text;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  p {
+    margin: 0;
+  }
 }
 
-.filter-input:hover + label,
-.filter-input:focus + label {
-  color: $black;
+.two-range-slider.noUi-target {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+
+  width: 220px;
+  height: 2px;
+
+  border: none;
+  border-radius: 0;
+  background-color: $empty_progress;
+  box-shadow: none;
+  transform: translateY(-50%);
+
+  .noUi-connect {
+    background-color: $filled_progress;
+  }
+
+  .noUi-handle {
+    top: 50%;
+    right: -10px !important;
+    width: 20px;
+    height: 20px;
+    border: 8px solid $white;
+    border-radius: 50%;
+    background-color: $range_control_point;
+    box-shadow: 0 2px 0 0 $range_control_shadow;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &::before, &::after { display: none; }
+  }
 }
 
-.filter-input:disabled + label {
-  color: $disabled_black;
+.filter-input-radio {
+  & + label {
+    padding-top: 4px;
+    padding-bottom: 1px;
+
+    &::before {
+      width: 25px;
+      height: 25px;
+      border: 5px solid $filter_input;
+      border-radius: 50%;
+    }
+
+    &::after {
+      top: 8px;
+      left: 8px;
+      width: 9px;
+      height: 9px;
+      background-color: $filter_input;
+      border-radius: 50%;
+    }
+  }
+
+  &:hover + label::after,
+  &:focus + label::after {
+    background-color: $filter_input_hover;
+  }
+
+  &:disabled + label::after {
+    background-color: $filter_input_disabled;
+  }
+}
+
+.filter-input-checkbox {
+  & + label {
+    padding-top: 3px;
+
+    &::before {
+      width: 23px;
+      height: 23px;
+      border: 2px solid $filter_input;
+      border-radius: 3px;
+    }
+
+    &::after {
+      top: 1.8px;
+      left: 5.5px;
+      height: 11px;
+      width: 19.5px;
+      border: 4px solid $filter_input;
+      border-right: 0;
+      border-top: 0;
+      transform: rotate(-45deg);
+      box-shadow:
+        inset 0 -2px 0 0 $white,
+        0 2px 0 0 $white;
+    }
+  }
+
+  &:hover + label::after,
+  &:focus + label::after {
+    border-color: $filter_input_hover;
+  }
+
+  &:disabled + label::after {
+    border-color: $filter_input_disabled;
+  }
+}
+
+.filter-input {
+  & + label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    color: $filter_label;
+    cursor: pointer;
+    user-select: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      opacity: 0;
+    }
+  }
+
+  &:checked + label::after {
+    opacity: 1;
+  }
+
+  &:hover + label,
+  &:focus + label {
+    color: $black;
+
+    &::before {
+      border-color: $filter_input_hover;
+    }
+  }
+
+  &:disabled + label {
+    color: $filter_input_disabled;
+
+    &::before {
+      border-color: $filter_input_disabled;
+    }
+  }
 }
 
 .sorting {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 95px;
+  margin-bottom: 55px;
 
   b {
-    width: 135px;
+    margin-right: 266px;
     @include font_style(18px, 18px, false, 700);
     text-transform: uppercase;
   }
 
   .sorting-by-list {
-    width: 360px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 }
 
-.sorting-by-list a {
-  @include font_style(14px, 18px, $disabled_black);
-  text-transform: uppercase;
+.sorting-by-list {
+  li {
+    margin-right: 26px;
 
-  &:hover, &:focus {
-    color: $sorting_link_hover;
+    &:nth-child(3) {
+      margin-right: 48px;
+    }
+
+    &:nth-child(4) {
+      margin-right: 17px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
-  &:active {
-    color: $black;
+  .sort-by-descending {
+    display: block;
+    width: 11px;
+    height: 10px;
+    border-top: 10px solid $sort_arrow;
+    border-bottom: 0;
+    border-right: 5.5px solid transparent;
+    border-left: 5.5px solid transparent;
+
+    &:hover, &:focus {
+      border-top-color: $sort_arrow_hover;
+    }
+
+    &:active, &.active {
+      border-top-color: $black;
+    }
+  }
+
+  .sort-by-ascending {
+    display: block;
+    width: 11px;
+    height: 10px;
+    border-top: 0;
+    border-bottom: 10px solid $sort_arrow;
+    border-right: 5.5px solid transparent;
+    border-left: 5.5px solid transparent;
+
+    &:hover, &:focus {
+      border-bottom-color: $sort_arrow_hover;
+    }
+
+    &:active, &.active {
+      border-bottom-color: $black;
+    }
+  }
+
+  a {
+    @include font_style(14px, 18px, $disabled_black);
+    text-transform: uppercase;
+
+    &:hover, &:focus {
+      color: $sorting_link_hover;
+    }
+
+    &:active, &.active {
+      color: $black;
+    }
   }
 }
 
@@ -96,8 +354,9 @@
 
   .template-item {
     position: relative;
+    padding-top: 40px;
     width: 360px;
-    margin-bottom: 75px;
+    margin-bottom: 33px;
 
     &:nth-child(odd) {
       margin-right: 40px;
@@ -107,58 +366,110 @@
       margin-bottom: 0;
     }
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: -40px;
-      left: 0;
-      width: 360px;
-      height: 40px;
-      background-image: url("../img/browser.svg");
-      background-color: $white;
+    &:hover {
+      box-shadow: 0 3px 7px 0 $disabled_black;
     }
 
     &:hover::before {
-      background-image: url("../img/browser-hover.svg");
+      opacity: 1;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 360px;
+      height: 40px;
+      background-image: url('../img/browser.svg');
+      opacity: 0.125;
     }
   }
 }
 
-.template-item-image {
-  width: 360px;
-  height: 577px;
-  margin: 0;
-  border: 1px solid $catalog_item_image_border;
-  border-top: 0;
+.template-item {
+  &:hover &-image::before {
+    border: none;
+  }
+
+  &:hover &-info {
+    opacity: 1;
+  }
+
+  &-image {
+    position: relative;
+    margin: 0;
+    width: 360px;
+    height: 576px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid $catalog_item_image_border;
+    }
+  }
 }
 
 .template-item-info {
-  display: none;
+  position: absolute;
+  padding: 26px 66px 44px;
+  width: 360px;
   text-align: center;
   background-color: $catalog_item_background;
 
+  opacity: 0;
+  transition: opacity 0.3s;
+  transform: translateY(-100%);
+
   h3 {
+    margin: 0;
+    margin-bottom: 18px;
     @include font_style(18px, 30px, false, 700);
     text-transform: uppercase;
   }
 
+  a {
+    color: $black;
+  }
+
+  .button {
+    padding-left: 60px;
+    padding-right: 60px;
+    width: 200px;
+    color: $white;
+  }
+
   p {
+    margin: 0;
+    margin-bottom: 28px;
     line-height: 18px;
     color: $catalog_item_text_color;
   }
 }
 
 .pagination-list {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
 
-   a {
+  li:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  a {
+    display: block;
+    padding: 15px 20px;
     @include font_style(false, 18px, $black, 500);
     text-align: center;
     text-transform: uppercase;
 
-    border-radius: 2px;
+    border-radius: 3px;
     background-color: $pagination_item_default;
 
     &:not(.pagination-item-current):hover,
@@ -174,7 +485,13 @@
 
     &.pagination-item-current {
       background-color: $white;
-      border: 2px solid $pagination_item_current_color;
-     }
-   }
+      box-shadow: inset 0 0 0 3px $pagination_item_current_color;
+    }
+
+    &.pagination-next {
+      padding-left: 78px;
+      padding-right: 78px;
+      width: 260px;
+    }
+  }
 }
