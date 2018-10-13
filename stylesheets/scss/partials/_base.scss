@@ -43,10 +43,10 @@ img {
 
 .button {
   display: inline-block;
-  padding: 15px;
+  padding-top: 18px;
+  padding-bottom: 15px;
 
-  line-height: 18px;
-  color: $white;
+  @include font_style(16px, 18px, $white, 500);
 
   text-transform: uppercase;
   text-align: center;

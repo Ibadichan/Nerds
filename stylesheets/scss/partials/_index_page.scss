@@ -9,10 +9,10 @@
   &-controls {
     position: absolute;
     right: 50%;
-    bottom: 95px;
+    bottom: 96px;
     display: flex;
     justify-content: space-between;
-    width: 90px;
+    width: 88px;
     height: 18px;
     transform: translateX(50%);
   }
@@ -41,8 +41,7 @@
 
 .slider-item {
   width: 1160px;
-  padding-top: 85px;
-  padding-bottom: 80px;
+  padding: 80px 0;
 
   &:first-child {
     background: transparent url('../img/slide-1.png') bottom right no-repeat;
@@ -66,14 +65,14 @@
 
   &-header {
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 23px;
     max-width: 515px;
     @include font_style(55px, 55px, false, 500);
   }
 
   &-text {
     margin: 0;
-    margin-bottom: 40px;
+    margin-bottom: 39px;
     max-width: 410px;
   }
 }
