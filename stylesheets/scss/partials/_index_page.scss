@@ -84,13 +84,16 @@
 
 .services-list {
   display: flex;
-  justify-content: space-between;
   margin: 0;
   padding: 0;
   list-style: none;
 
   .service-item {
     width: 300px;
+
+    &:not(:last-child) {
+      margin-right: 100px;
+    }
   }
 }
 
@@ -117,9 +120,8 @@
   &-text {
     order: 2;
     margin: 0;
-    margin-bottom: 8px;
-    max-width: 238px;
-    min-height: 72px;
+    margin-bottom: 31px;
+    width: 245px;
   }
 
   .button {

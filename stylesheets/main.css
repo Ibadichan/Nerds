@@ -847,13 +847,15 @@ input[type=radio].visually-hidden {
 
 .services-list {
   display: flex;
-  justify-content: space-between;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .services-list .service-item {
   width: 300px;
+}
+.services-list .service-item:not(:last-child) {
+  margin-right: 100px;
 }
 
 .service-item {
@@ -878,9 +880,8 @@ input[type=radio].visually-hidden {
 .service-item-text {
   order: 2;
   margin: 0;
-  margin-bottom: 8px;
-  max-width: 238px;
-  min-height: 72px;
+  margin-bottom: 31px;
+  width: 245px;
 }
 .service-item .button {
   order: 3;
