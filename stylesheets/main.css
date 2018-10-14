@@ -893,24 +893,24 @@ input[type=radio].visually-hidden {
 .index-columns {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 75px;
+  padding-bottom: 73px;
   border-bottom: 2px solid #eeeeee;
 }
 
 .about-us {
-  padding-top: 80px;
+  padding-top: 75px;
   width: 660px;
 }
 .about-us-slogan {
   margin: 0;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
   font-size: 45px;
   line-height: 45px;
   font-weight: 500;
 }
 .about-us-text {
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 39px;
 }
 .about-us .make-orders-for {
   display: block;
@@ -959,7 +959,7 @@ input[type=radio].visually-hidden {
 }
 .work-statistics-table th {
   position: relative;
-  padding: 22.5px 0;
+  padding: 16px 0;
   width: 33.3%;
   font-size: 45px;
   line-height: 10px;
@@ -969,11 +969,13 @@ input[type=radio].visually-hidden {
 .work-statistics-table th::after {
   content: "%";
   position: absolute;
-  top: 14px;
+  top: 7px;
   font-size: 26px;
   font-weight: 400;
 }
 .work-statistics-table td {
+  padding: 0;
+  padding-top: 18px;
   width: 33.3%;
   line-height: 18px;
 }

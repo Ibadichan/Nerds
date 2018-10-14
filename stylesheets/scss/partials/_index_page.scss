@@ -135,23 +135,23 @@
 .index-columns {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 75px;
+  padding-bottom: 73px;
   border-bottom: 2px solid $index_columns_border;
 }
 
 .about-us {
-  padding-top: 80px;
+  padding-top: 75px;
   width: 660px;
 
   &-slogan {
     margin: 0;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
     @include font_style(45px, 45px, false, 500);
   }
 
   &-text {
     margin: 0;
-    margin-bottom: 40px;
+    margin-bottom: 39px;
   }
 
   .make-orders-for {
@@ -206,7 +206,7 @@
 
   th {
     position: relative;
-    padding: 22.5px 0;
+    padding: 16px 0;
     width: 33.3%;
     @include font_style(45px, 10px, false, 700);
     text-align: left;
@@ -214,13 +214,15 @@
     &::after {
       content: "\0025";
       position: absolute;
-      top: 14px;
+      top: 7px;
       font-size: 26px;
       font-weight: 400;
     }
   }
 
   td {
+    padding: 0;
+    padding-top: 18px;
     width: 33.3%;
     line-height: 18px;
   }
