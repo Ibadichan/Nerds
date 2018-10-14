@@ -64,10 +64,11 @@
   justify-content: space-between;
   margin-right: 245px;
   width: 440px;
+}
 
-  &-current {
-    border-bottom: 2px solid $header_links_color;
-  }
+.site-navigation-current a {
+  padding-bottom: 9px;
+  border-bottom: 2px solid $header_links_color;
 }
 
 .user-navigation {
