@@ -619,6 +619,7 @@ input[type=radio].visually-hidden {
 
 .footer-columns {
   display: flex;
+  align-items: center;
 }
 
 .footer-contacts {
@@ -634,7 +635,7 @@ input[type=radio].visually-hidden {
 }
 .footer-contacts b {
   display: block;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
   text-transform: uppercase;
   font-size: 18px;
   line-height: 30px;
@@ -645,13 +646,14 @@ input[type=radio].visually-hidden {
 }
 .footer-contacts .our-address {
   margin-bottom: 18px;
+  max-width: 202px;
 }
 .footer-contacts .our-phone {
   margin-bottom: 36px;
 }
 .footer-contacts .button {
-  padding-right: 45px;
-  padding-left: 45px;
+  padding-right: 44px;
+  padding-left: 44px;
   width: 220px;
 }
 
@@ -716,7 +718,7 @@ input[type=radio].visually-hidden {
   margin-bottom: 10px;
   font-size: 36px;
   line-height: 36px;
-  font-weight: 500;
+  font-weight: 700;
 }
 .footer-friendship p {
   margin: 0;
@@ -724,7 +726,7 @@ input[type=radio].visually-hidden {
 }
 
 .google-map {
-  height: 400px;
+  height: 415px;
   margin-bottom: 70px;
   background: grey url("../img/map.png") 50% 50%;
 }

@@ -5,6 +5,7 @@
 
 .footer-columns {
   display: flex;
+  align-items: center;
 }
 
 .footer-contacts {
@@ -17,7 +18,7 @@
 
   b {
     display: block;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
     text-transform: uppercase;
     @include font_style(18px, 30px);
   }
@@ -29,6 +30,7 @@
 
   .our-address {
     margin-bottom: 18px;
+    max-width: 202px;
   }
 
   .our-phone {
@@ -36,8 +38,8 @@
   }
 
   .button {
-    padding-right: 45px;
-    padding-left: 45px;
+    padding-right: 44px;
+    padding-left: 44px;
     width: 220px;
   }
 }
@@ -106,7 +108,7 @@
   b {
     display: block;
     margin-bottom: 10px;
-    @include font_style(36px, 36px, false, 500);
+    @include font_style(36px, 36px, false, 700);
   }
 
   p {
@@ -116,7 +118,7 @@
 }
 
 .google-map {
-  height: 400px;
+  height: 415px;
   margin-bottom: 70px;
   background: grey url("../img/map.png") 50% 50%;
 }
