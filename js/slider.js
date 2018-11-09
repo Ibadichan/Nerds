@@ -1,37 +1,33 @@
-var firstSlide = document.querySelector('.slider-item:first-child');
-var secondSlide = document.querySelector('.slider-item:nth-child(2)');
-var thirdSlide = document.querySelector('.slider-item:last-child');
+(function() {
+  function Slider(slide, slideControl) {
+    var self = this;
+    this.slide = slide;
+    this.slideControl = slideControl;
 
-var firstControl = document.querySelector('.slider-controls button:first-child');
-var secondControl = document.querySelector('.slider-controls button:nth-child(2)');
-var thirdControl = document.querySelector('.slider-controls button:last-child');
+    this.slideControl.onclick = function() {
+      var slide, slideControl;
 
-firstControl.onclick = function() {
-  secondSlide.style.display = 'none';
-  thirdSlide.style.display = 'none';
-  firstSlide.style.display = 'block';
+      for (var i = 0; i < Slider.instances.length; i++) {
+        slide = Slider.instances[i].slide;
+        slideControl = Slider.instances[i].slideControl;
 
-  firstControl.classList.add('selected-control');
-  secondControl.classList.remove('selected-control');
-  thirdControl.classList.remove('selected-control');
-}
+        slide.style.display = 'none';
+        slideControl.className = '';
+      }
 
-secondControl.onclick = function() {
-  firstSlide.style.display = 'none';
-  thirdSlide.style.display = 'none';
-  secondSlide.style.display = 'block';
+      self.slide.style.display = 'block';
+      this.className += 'selected-control';
+    }
+  }
 
-  firstControl.classList.remove('selected-control');
-  secondControl.classList.add('selected-control');
-  thirdControl.classList.remove('selected-control');
-}
+  Slider.instances = [];
 
-thirdControl.onclick = function() {
-  secondSlide.style.display = 'none';
-  firstSlide.style.display = 'none';
-  thirdSlide.style.display = 'block';
+  var slides = document.querySelectorAll('.slider-list .slider-item');
+  var controls = document.querySelectorAll('.slider-controls button');
 
-  firstControl.classList.remove('selected-control');
-  secondControl.classList.remove('selected-control');
-  thirdControl.classList.add('selected-control');
-}
+  for (var i = 0; i < slides.length; i++) {
+    Slider.instances.push(
+      new Slider(slides[i], controls[i])
+    );
+  }
+})();
