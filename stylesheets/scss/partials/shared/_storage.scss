@@ -7,10 +7,14 @@ $header_background:  #eeeeee;
 $header_links_color: #fb565a;
 $slider_control: #c1c1c1;
 
-$input_border_default: rgba($color: $black, $alpha: 0.1);
-$placehoder_color_focus: rgb(68, 68, 68);
-$placehoder_color_required: rgb(231, 66, 70);
-$placehoder_color_default: rgba($color: $black, $alpha: 0.2);
+$input_border_default: #d7dcde;
+$input_border_hover: #b3b8bb;
+$input_border_required: #e74145;
+$input_border_focus: $black;
+
+$placeholder_color_focus: #444444;
+$placeholder_color_required: #e74145;
+$placeholder_color_default: #a1a1a1;
 
 $button_red_default:#fb5559;
 $button_red_hover:  #e74246;
@@ -69,16 +73,16 @@ $sort_arrow: #ededed;
 $sort_arrow_hover: #a5a5a5;
 $sort_arrow_active: $black;
 
+
+$modal_shadow: rgba(0, 1, 1, 0.75);
+
+$cross_default: #fdcbcd;
+$cross_hover: #fb565a;
+$cross_active: #feedee;
+
 @mixin font_style($font_size, $line_height, $color: false, $font_weight: false) {
   @if $font_size { font-size: $font_size; }
   @if $line_height { line-height: $line_height; }
   @if $color { color: $color; }
   @if $font_weight { font-weight: $font_weight; }
-}
-
-@mixin calculate($property, $expression, $default) {
-  #{$property}: $default;
-  #{$property}: -webkit-calc(#{$expression});
-  #{$property}: -moz-calc(#{$expression});
-  #{$property}: calc(#{$expression});
 }

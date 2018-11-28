@@ -249,6 +249,10 @@
     }
   }
 
+  &:focus + label::before {
+    outline: #3b99fc auto 5px;
+  }
+
   &:disabled + label {
     color: $filter_input_disabled;
 
@@ -354,7 +358,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  margin-bottom: 60px;
+  margin-bottom: 27px;
   padding: 0;
   list-style: none;
 
@@ -366,10 +370,6 @@
 
     &:nth-child(odd) {
       margin-right: 40px;
-    }
-
-    &:nth-last-child(-n + 2) {
-      margin-bottom: 0;
     }
 
     &:hover {
@@ -399,6 +399,7 @@
   }
 
   &:hover &-info {
+    visibility: visible;
     opacity: 1;
   }
 
@@ -427,6 +428,7 @@
   text-align: center;
   background-color: $catalog_item_background;
 
+  visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s;
   transform: translateY(-100%);
@@ -450,10 +452,12 @@
   }
 
   p {
+    max-height: 200px;
     margin: 0;
     margin-bottom: 28px;
     line-height: 18px;
     color: $catalog_item_text_color;
+    overflow: auto;
   }
 }
 

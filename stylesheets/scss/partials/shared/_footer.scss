@@ -11,7 +11,7 @@
 .footer-contacts {
   position: absolute;
   top: 55px;
-  @include calculate('left', '(100% - 1160px) / 2', 140px);
+  left: calc((100% - 1160px) / 2);
   padding: 48px 50px;
   width: 320px;
   background-color: $white;

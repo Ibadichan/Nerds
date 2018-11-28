@@ -44,17 +44,17 @@
   padding: 80px 0;
 
   &:first-child {
-    background: transparent url('../img/slide-1.png') bottom right no-repeat;
+    background: transparent url('../img/slide-1.png') top right no-repeat;
   }
 
   &:nth-child(2) {
     display: none;
-    background: transparent url('../img/slide-2.png') bottom right no-repeat;
+    background: transparent url('../img/slide-2.png') top right no-repeat;
   }
 
   &:last-child {
     display: none;
-    background: transparent url('../img/slide-3.png') bottom right no-repeat;
+    background: transparent url('../img/slide-3.png') top right no-repeat;
   }
 
   .button {

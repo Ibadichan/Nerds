@@ -175,7 +175,7 @@
           ул. Б. Конюшенная, д. 19/8
         </p>
         <p class="our-phone">тел. +7 (812) 275-75-75</p>
-        <a href="#" class="button button-red">Напишите нам</a>
+        <a href="#" class="button button-red" id="write-us-link">Напишите нам</a>
       </div>
 
       <div class="footer-columns container">
@@ -202,25 +202,32 @@
       <h2>Напишите нам</h2>
 
       <form class="write-us-form" action="/write_us" method="POST">
-        <p class="write-us-item">
-          <label for="write-us-name">Ваше имя:</label>
-          <input id="write-us-name" type="text" name="name" placeholder="Имя Фамилия" required>
-        </p>
-        <p class="write-us-item">
-          <label for="write-us-email">Ваш e-mail:</label>
-          <input id="write-us-email" type="email" name="email" placeholder="email@example.com" required>
-        </p>
+        <div class="write-us-columns">
+          <p class="write-us-item">
+            <label for="write-us-name">Ваше имя:</label>
+            <input id="write-us-name" type="text" name="name" placeholder="Имя Фамилия" required>
+          </p>
+          <p class="write-us-item">
+            <label for="write-us-email">Ваш e-mail:</label>
+            <input id="write-us-email" type="email" name="email" placeholder="email@example.com" required>
+          </p>
+        </div>
+
         <p class="write-us-item">
           <label for="write-us-text">Текст письма:</label>
           <textarea id="write-us-text" name="text" placeholder="В свободной форме" required></textarea>
         </p>
         <button class="button button-red" type="submit">Отправить</button>
       </form>
-      <button class="modal-close" type="button">Закрыть</button>
+      <button class="modal-close" type="button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
     </section>
+    <div class="modal-overlay"></div>
 
     <script src="js/slider.js"></script>
     <script src="js/map.js"></script>
+    <script src="js/modal.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBtUzMHTT-hay1D1I6prKCus8IEDdQyNI&amp;callback=initMap">
     </script>
   </body>
