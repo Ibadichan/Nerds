@@ -1,0 +1,70 @@
+.button {
+  display: inline-block;
+  padding: 18px 20px 15px;
+
+  @include calculate_font(16px, 18px, $white, 500);
+
+  text-transform: uppercase;
+  text-align: center;
+
+  border: 0;
+  border-radius: 3px;
+
+  &:active {
+    color: $button_active_color;
+  }
+
+  &-red {
+    background-color: $button_red_default;
+
+    &:hover, &:focus {
+      background-color: $button_red_hover;
+    }
+
+    &:active {
+      background-color: $button_red_active;
+      box-shadow: inset 0 3px 0 0 $button_red_active_shadow;
+    }
+  }
+
+  &-yellow {
+    background-color: $button_yellow_default;
+
+    &:hover, &:focus {
+      background-color: $button_yellow_hover;
+    }
+
+    &:active {
+      background-color: $button_yellow_active;
+      box-shadow: inset 0 3px 0 0 $button_yellow_active_shadow;
+    }
+  }
+
+  &-green {
+    background-color: $button_green_default;
+
+    &:hover, &:focus {
+      background-color: $button_green_hover;
+    }
+
+    &:active {
+      background-color: $button_green_active;
+      box-shadow: inset 0 3px 0 0 $button_green_active_shadow;
+    }
+  }
+
+  &-gray {
+    color: $black;
+    background-color: $button_gray_default;
+
+    &:hover, &:focus {
+      background-color: $button_gray_hover;
+    }
+
+    &:active {
+      color: $disabled;
+      background-color: $button_gray_active;
+      box-shadow: inset 0 3px 0 0 $button_gray_active_shadow;
+    }
+  }
+}
