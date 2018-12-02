@@ -1,0 +1,31 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  min-width: 1200px;
+  margin: 0;
+  padding: 0;
+
+  font: 400 16px/24px "Roboto", Arial, sans-serif;
+  color: $black;
+
+  background-color: $white;
+
+  main {
+    margin-bottom: 80px;
+  }
+}

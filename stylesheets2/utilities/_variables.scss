@@ -1,0 +1,81 @@
+$white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
+$disabled: rgba($black, 0.3);
+
+$button_active_color: rgba($white, 0.3);
+
+$button_red_default: rgb(251, 85, 89);
+$button_red_hover: rgb(231, 66, 70);
+$button_red_active: rgb(215, 54, 58);
+$button_red_active_shadow: rgb(193, 49, 52);
+
+$button_yellow_default: rgb(239, 199, 73);
+$button_yellow_hover: rgb(234, 180, 52);
+$button_yellow_active: rgb(229, 167, 34);
+$button_yellow_active_shadow: rgb(206, 150, 31);
+
+$button_green_default: rgb(0, 201, 115);
+$button_green_hover: rgb(0, 188, 107);
+$button_green_active: rgb(0, 170, 97);
+$button_green_active_shadow: rgb(0, 153, 87);
+
+$button_gray_default: rgb(237, 237, 237);
+$button_gray_hover: rgb(223, 223, 223);
+$button_gray_active: rgb(213, 213, 213);
+$button_gray_active_shadow: rgb(192, 192, 192);
+
+$header_background:  #eeeeee;
+$header_links_color: #fb565a;
+$slider_control: #c1c1c1;
+
+$input_border_default: #d7dcde;
+$input_border_hover: #b3b8bb;
+$input_border_required: #e74145;
+$input_border_focus: $black;
+
+$placeholder_color_focus: #444444;
+$placeholder_color_required: #e74145;
+$placeholder_color_default: #a1a1a1;
+
+$social_button_default: #e1e1e1;
+$social_button_hover: #e74246;
+$social_button_active: #d7363a;
+$social_button_active_shadow: #c13134;
+
+$pagination_item_default: $button_gray_default;
+$pagination_item_hover: $button_gray_hover;
+$pagination_item_active: $button_gray_active;
+$pagination_item_active_shadow: $button_gray_active_shadow;
+$pagination_item_current_color: #dbdbdb;
+
+$services_border: #eeeeee;
+$partners_border: $services_border;
+$index_columns_border: $partners_border;
+$filter_label: #4d4d4d;
+$sorting_link_hover: rgba(0, 0, 0, 0.6);
+$catalog_item_background: #eeeeee;
+$catalog_item_text_color: rgb(102, 102, 102);
+$catalog_item_image_border: #ededed;
+$order_item_before: $header_links_color;
+
+$range_container: #ededed;
+$range_input: $range_container;
+$range_text: rgb(45, 54, 59);
+$filled_progress: #00ca74;
+$empty_progress: #d7dbdd;
+$range_control_shadow: #cccccc;
+$range_control_point: #ababab;
+
+$filter_input: #a5a5a5;
+$filter_input_hover: #4d4d4d;
+$filter_input_disabled: #ededed;
+
+$sort_arrow: #ededed;
+$sort_arrow_hover: #a5a5a5;
+$sort_arrow_active: $black;
+
+$modal_shadow: rgba(0, 1, 1, 0.75);
+
+$cross_default: #fdcbcd;
+$cross_hover: #fb565a;
+$cross_active: #feedee;
