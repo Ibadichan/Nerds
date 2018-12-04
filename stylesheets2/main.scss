@@ -7,6 +7,10 @@
 @import "base/base";
 @import "base/helpers";
 
+@import "layout/header";
+@import "layout/footer";
+
 @import "components/buttons";
+@import "components/modal";
 
 @import "pages/catalog";
