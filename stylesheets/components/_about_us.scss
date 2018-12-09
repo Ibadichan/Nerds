@@ -1,0 +1,48 @@
+.about-us {
+  width: 660px;
+  padding-top: 75px;
+
+  &-slogan {
+    margin: 0;
+    margin-bottom: 32px;
+    @include calculate_font(45px, 45px, false, 500);
+  }
+
+  &-text {
+    margin: 0;
+    margin-bottom: 39px;
+  }
+
+  .make-orders-for {
+    display: block;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .orders-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.orders-list li {
+  position: relative;
+  margin-bottom: 24px;
+  padding-left: 36px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 2px;
+    width: 25px;
+    background-color: $order_item_before;
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,17 @@
+.catalog-page {
+	main {
+    margin-bottom: 60px;
+	}
+
+	.page-title {
+	  margin: 0;
+	  margin-bottom: 55px;
+	  padding-top: 80px;
+	  padding-bottom: 106px;
+
+	  @include calculate_font(55px, 55px, false, 500);
+	  text-align: center;
+
+	  background-color: $header_background;
+	}
+}

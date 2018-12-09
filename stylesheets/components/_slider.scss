@@ -1,0 +1,84 @@
+.slider {
+  margin-bottom: 80px;
+  background-color: $header_background;
+
+  .container {
+    position: relative;
+  }
+
+  &-controls {
+    position: absolute;
+    right: 50%;
+    bottom: 96px;
+    display: flex;
+    justify-content: space-between;
+    width: 88px;
+    height: 18px;
+    transform: translateX(50%);
+  }
+}
+
+.slider-controls button {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 5px solid $white;
+  border-radius: 50%;
+  background-color: $white;
+  transition: box-shadow 0.2s linear;
+  cursor: pointer;
+}
+
+.selected-control {
+  box-shadow: inset 0 0 0 2px $slider_selected_control;
+}
+
+.slider-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slider-item {
+  width: 100%;
+  padding: 80px 0;
+  transition: all 0.5s;
+
+  &-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &:first-child {
+    background: transparent url('../img/slide-1.png') top right no-repeat;
+  }
+
+  &:nth-child(2) {
+    background: transparent url('../img/slide-2.png') top right no-repeat;
+  }
+
+  &:last-child {
+    background: transparent url('../img/slide-3.png') top right no-repeat;
+  }
+
+  .button {
+    width: 240px;
+  }
+
+  &-header {
+    max-width: 515px;
+    margin: 0;
+    margin-bottom: 23px;
+    @include calculate_font(55px, 55px, false, 500);
+  }
+
+  &-text {
+    max-width: 410px;
+    margin: 0;
+    margin-bottom: 39px;
+  }
+}
