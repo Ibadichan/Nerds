@@ -1,0 +1,240 @@
+.filters {
+  width: 260px;
+}
+
+.filter {
+  legend {
+    margin-bottom: 14px;
+    @include calculate_font(18px, 30px, false, 700);
+    text-transform: uppercase;
+  }
+
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .cost-section {
+    margin-bottom: 53px;
+  }
+
+  .grid-section {
+    margin-bottom: 42px;
+  }
+
+  .features-section {
+    margin-bottom: 48px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .filter-option {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+    line-height: 20px;
+  }
+
+  button[type='submit'] {
+    width: 100%;
+  }
+}
+
+.features-section .filter-option:not(:last-child) {
+  margin-bottom: 17px;
+}
+
+.cost-section {
+  legend {
+    margin-bottom: 48px;
+  }
+
+  .range-container {
+    position: relative;
+    margin-bottom: 14px;
+    width: 260px;
+    height: 80px;
+    background-color: $range_container;
+    border-radius: 3px;
+  }
+
+  .price-limits {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input {
+    padding: 10px 15px;
+    width: 80px;
+    text-align: center;
+    border: 0;
+    border-radius: 3px;
+    background-color: $range_input;
+  }
+
+  label {
+    margin: 8px;
+    margin-left: 0;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: $range_text;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.two-range-slider.noUi-target {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+
+  width: 220px;
+  height: 2px;
+
+  border: 0;
+  border-radius: 0;
+  background-color: $empty_progress;
+  box-shadow: none;
+  transform: translateY(-50%);
+
+  .noUi-connect {
+    background-color: $filled_progress;
+  }
+
+  .noUi-handle {
+    top: 50%;
+    right: -10px !important;
+    width: 20px;
+    height: 20px;
+    border: 8px solid $white;
+    border-radius: 50%;
+    background-color: $range_control_point;
+    box-shadow: 0 2px 0 0 $range_control_shadow;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    &::before, &::after { display: none; }
+  }
+}
+
+.filter-input-radio {
+  & + label {
+    padding-top: 4px;
+    padding-bottom: 1px;
+
+    &::before {
+      width: 25px;
+      height: 25px;
+      border: 4px solid $filter_input;
+      border-radius: 50%;
+    }
+
+    &::after {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      width: 9px;
+      height: 9px;
+      background-color: $filter_input;
+      border-radius: 50%;
+    }
+  }
+
+  &:hover + label::after,
+  &:focus + label::after {
+    background-color: $filter_input_hover;
+  }
+
+  &:disabled + label::after {
+    background-color: $filter_input_disabled;
+  }
+}
+
+.filter-input-checkbox {
+  & + label {
+    padding-top: 3px;
+
+    &::before {
+      width: 23px;
+      height: 23px;
+      border: 2px solid $filter_input;
+      border-radius: 3px;
+    }
+
+    &::after {
+      position: absolute;
+      top: 1.8px;
+      left: 5.5px;
+      height: 11px;
+      width: 19.5px;
+      border: 4px solid $filter_input;
+      border-right: 0;
+      border-top: 0;
+      transform: rotate(-45deg);
+      box-shadow:
+        inset 0 -2px 0 0 $white,
+        0 2px 0 0 $white;
+    }
+  }
+
+  &:hover + label::after,
+  &:focus + label::after {
+    border-color: $filter_input_hover;
+  }
+
+  &:disabled + label::after {
+    border-color: $filter_input_disabled;
+  }
+}
+
+.filter-input {
+  & + label {
+    position: relative;
+    display: block;
+    padding-left: 35px;
+    color: $filter_label;
+    cursor: pointer;
+    user-select: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &:checked + label::after {
+    content: '';
+  }
+
+  &:hover + label,
+  &:focus + label {
+    color: $black;
+
+    &::before {
+      border-color: $filter_input_hover;
+    }
+  }
+
+  &:focus + label::before {
+    outline: $browser_outline auto 5px;
+  }
+
+  &:disabled + label {
+    color: $filter_input_disabled;
+
+    &::before {
+      border-color: $filter_input_disabled;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.index-columns {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 73px;
+  border-bottom: 2px solid $section_border;
+}
+
+.catalog-columns {
+  display: flex;
+  justify-content: space-between;
+}

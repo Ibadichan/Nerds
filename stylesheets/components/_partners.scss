@@ -1,0 +1,43 @@
+.partners {
+  border-bottom: 2px solid $section_border;
+}
+
+.partners-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.partner-item {
+  position: relative;
+  width: 260px;
+  height: 180px;
+
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    width: 2px;
+    height: 52px;
+    background-color: $section_border;
+    transform: translate(-50%, -50%);
+  }
+
+  a {
+    opacity: 0.2;
+
+    &:hover, &:focus {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 0.1;
+    }
+  }
+}

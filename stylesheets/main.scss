@@ -1,0 +1,28 @@
+@import "utilities/mixins";
+@import "utilities/variables";
+
+@import "vendors/normalize";
+@import "vendors/noUiSlider";
+
+@import "base/base";
+@import "base/helpers";
+
+@import "layout/header";
+@import "layout/footer";
+@import "layout/grids";
+
+@import "components/buttons";
+@import "components/modal";
+
+@import "components/slider";
+@import "components/our_services";
+@import "components/about_us";
+@import "components/work_statistics";
+@import "components/partners";
+
+@import "components/filters";
+@import "components/templates_sorting";
+@import "components/templates";
+@import "components/pagination";
+
+@import "pages/catalog";
