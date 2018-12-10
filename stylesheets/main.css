@@ -797,10 +797,10 @@ input[type=radio].visually-hidden {
 .footer-social {
   display: flex;
   justify-content: space-between;
+  width: 260px;
   margin: 0;
   margin-right: 140px;
   padding: 0;
-  width: 260px;
   list-style: none;
 }
 .footer-social .social-button {
@@ -883,12 +883,14 @@ input[type=radio].visually-hidden {
 .button {
   display: inline-block;
   padding: 18px 20px 15px;
+  font: inherit;
   font-size: 16px;
   line-height: 18px;
   color: white;
   font-weight: 500;
   text-transform: uppercase;
   text-align: center;
+  vertical-align: top;
   border: 0;
   border-radius: 3px;
 }
@@ -977,8 +979,7 @@ input[type=radio].visually-hidden {
   margin: 0;
 }
 .modal-write-us .button[type=submit] {
-  padding-left: 84px;
-  padding-right: 84px;
+  width: 260px;
 }
 .modal-write-us label {
   display: block;
@@ -1065,6 +1066,7 @@ input[type=radio].visually-hidden {
   top: 0;
   left: 0;
   z-index: 1;
+  display: none;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
@@ -1188,6 +1190,7 @@ input[type=radio].visually-hidden {
   margin-bottom: 15px;
   font-size: 24px;
   line-height: 30px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 .service-item-image {
@@ -1390,14 +1393,20 @@ input[type=radio].visually-hidden {
   justify-content: space-between;
 }
 .cost-section input {
-  padding: 10px 15px;
   width: 80px;
+  padding: 8px 15px;
+  font: inherit;
+  line-height: 22px;
   text-align: center;
   border: 0;
   border-radius: 3px;
   background-color: #ededed;
 }
+.cost-section input::placeholder {
+  color: #2d363b;
+}
 .cost-section label {
+  display: inline-block;
   margin: 8px;
   margin-left: 0;
   line-height: 22px;
@@ -1523,6 +1532,7 @@ input[type=radio].visually-hidden {
 }
 .filter-input:disabled + label {
   color: #ededed;
+  cursor: not-allowed;
 }
 .filter-input:disabled + label::before {
   border-color: #ededed;

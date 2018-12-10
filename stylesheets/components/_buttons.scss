@@ -2,10 +2,12 @@
   display: inline-block;
   padding: 18px 20px 15px;
 
+  font: inherit;
   @include calculate_font(16px, 18px, $white, 500);
 
   text-transform: uppercase;
   text-align: center;
+  vertical-align: top;
 
   border: 0;
   border-radius: 3px;
