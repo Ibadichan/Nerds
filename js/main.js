@@ -60,18 +60,6 @@
   }
 })();
 
-// HIDDEN POLYFILL
-if (document.documentElement.hidden === undefined) {
-  Object.defineProperty(Element.prototype, "hidden", {
-    set: function (value) {
-      this.setAttribute('hidden', value);
-    },
-    get: function () {
-      return this.getAttribute('hidden');
-    }
-  });
-}
-
 // ---------------------------------------------------------
 
 // GOOGLE MAP
@@ -116,9 +104,16 @@ function initMap() {
 
   Modal.prototype.toggle = function () {
     var options = this.options;
+    var overlay = options.overlay;
+    var overlayDisplay = window.getComputedStyle(overlay).display;
 
     options.container.classList.toggle(options.openClass);
-    options.overlay.hidden = !options.overlay.hidden;
+
+    if (overlay.style.display == 'none' || overlayDisplay == 'none') {
+      overlay.style.display = 'block';
+    } else {
+      overlay.style.display = 'none';
+    }
   }
 
   // FORM VALIDATION

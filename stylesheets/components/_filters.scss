@@ -69,15 +69,22 @@
   }
 
   input {
-    padding: 10px 15px;
     width: 80px;
+    padding: 8px 15px;
+    font: inherit;
+    line-height: 22px;
     text-align: center;
     border: 0;
     border-radius: 3px;
     background-color: $range_input;
+
+    &::placeholder {
+      color: $range_text;
+    }
   }
 
   label {
+    display: inline-block;
     margin: 8px;
     margin-left: 0;
     line-height: 22px;
@@ -232,6 +239,7 @@
 
   &:disabled + label {
     color: $filter_input_disabled;
+    cursor: not-allowed;
 
     &::before {
       border-color: $filter_input_disabled;
