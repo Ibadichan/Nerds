@@ -90,30 +90,33 @@ function initMap() {
 (function () {
   // MODAL
   function Modal(options) {
-    var self = this;
     this.options = options;
 
-    options.openLink.addEventListener('click', function (event) {
-      event.preventDefault();
-      self.toggle();
-    });
+    options.openLink.addEventListener('click', this.toggle.bind(this));
+    options.overlay && options.overlay.addEventListener('click', this.toggle.bind(this));
+    options.cross && options.cross.addEventListener('click', this.toggle.bind(this));
 
-    options.overlay.addEventListener('click', self.toggle.bind(self));
-    options.cross.addEventListener('click', self.toggle.bind(self));
+    window.addEventListener('keydown', function(event) {
+      var modal = options.container
+      var modalOpenClass = options.modalOpenClass;
+
+      if (event.keyCode === 27 && modal.classList.contains(modalOpenClass)) {
+        event.preventDefault();
+        modal.classList.remove(modalOpenClass);
+        if (!options.overlay || !options.overlayOpenClass) { return; }
+        options.overlay.classList.remove(options.overlayOpenClass);
+      }
+    });
   }
 
-  Modal.prototype.toggle = function () {
+  Modal.prototype.toggle = function(event) {
+    event.preventDefault();
     var options = this.options;
-    var overlay = options.overlay;
-    var overlayDisplay = window.getComputedStyle(overlay).display;
 
-    options.container.classList.toggle(options.openClass);
-
-    if (overlay.style.display == 'none' || overlayDisplay == 'none') {
-      overlay.style.display = 'block';
-    } else {
-      overlay.style.display = 'none';
-    }
+    options.animateClass && options.container.classList.remove(options.animateClass);
+    options.container.classList.toggle(options.modalOpenClass);
+    options.overlay && options.overlay.classList.toggle(options.overlayOpenClass);
+    options.fieldToFocus && options.fieldToFocus.focus();
   }
 
   // FORM VALIDATION
@@ -137,24 +140,22 @@ function initMap() {
 
   // SLIDER
   function Slider(options) {
-    var self = this,
-      control, slide;
+    var control, slide;
+    var slides = options.slides;
+    var controls = options.controls;
 
-    this.slides = document.querySelectorAll(options.slidesClass);
-    this.controls = document.querySelectorAll(options.controlsClass);
-
-    for (var i = 0; i < this.slides.length; i++) {
-      control = this.controls[i];
-      slide = this.slides[i];
+    for (var i = 0; i < slides.length; i++) {
+      control = controls[i];
+      slide = slides[i];
 
       control.addEventListener('click', function (slide) {
-        for (var j = 0; j < self.slides.length; j++) {
-          self.slides[j].classList.add('slider-item-hidden');
-          self.controls[j].classList.remove('selected-control');
+        for (var j = 0; j < slides.length; j++) {
+          slides[j].classList.add(options.hiddenSlideClass);
+          controls[j].classList.remove(options.activeControlClass);
         }
 
-        slide.classList.remove('slider-item-hidden');
-        this.classList.add('selected-control');
+        slide.classList.remove(options.hiddenSlideClass);
+        this.classList.add(options.activeControlClass);
       }.bind(control, slide));
     }
   }
@@ -163,10 +164,13 @@ function initMap() {
   // create objects
   new Modal({
     container: document.querySelector('.modal-write-us'),
-    openLink: document.getElementById('write-us-link'),
+    openLink: document.querySelector('#write-us-link'),
+    modalOpenClass: 'modal-write-us-show',
     cross: document.querySelector('.modal-write-us .modal-close'),
     overlay: document.querySelector('.modal-write-us + .modal-overlay'),
-    openClass: 'modal-write-us-show'
+    overlayOpenClass: 'modal-overlay-show',
+    fieldToFocus: document.querySelector('#write-us-name'),
+    animateClass: 'modal-write-us-error'
   });
 
   new FormValidation({
@@ -186,9 +190,9 @@ function initMap() {
       }
 
       if (fieldsIsValid) { return; }
-      modal.classList.remove('modal-write-us-animate');
+      modal.classList.remove('modal-write-us-error');
       void modal.offsetWidth;
-      modal.classList.add('modal-write-us-animate');
+      modal.classList.add('modal-write-us-error');
     }
   });
 
@@ -210,8 +214,10 @@ function initMap() {
     });
   } else if (document.querySelector('.slider-list')) {
     new Slider({
-      slidesClass: '.slider-list .slider-item',
-      controlsClass: '.slider-controls button'
+      slides: document.querySelectorAll('.slider-list .slider-item'),
+      controls: document.querySelectorAll('.slider-controls button'),
+      hiddenSlideClass: 'slider-item-hidden',
+      activeControlClass: 'selected-control'
     });
   }
 })();

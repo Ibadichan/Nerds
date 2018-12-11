@@ -1,25 +1,22 @@
 .modal-write-us {
   position: fixed;
   left: 50%;
-  bottom: 0;
+  bottom: 180px;
   z-index: 2;
-  visibility: hidden;
+  display: none;
   width: 960px;
   padding: 74px 100px 84px;
   background-color: $white;
-  transform: translate(-50%, 100%);
-
-  transition: all 0.5s;
+  transform: translateX(-50%);
   box-shadow: 0px 20px 40px $modal_shadow;
 
-  &-animate {
-    animation: invalid-modal 0.3s linear 0s 3 alternate none;
+  &-show {
+    display: block;
+    animation: bounce 0.6s;
   }
 
-  &-show {
-    bottom: 180px;
-    visibility: visible;
-    transform: translateX(-50%);
+  &-error {
+    animation: shake 0.6s;
   }
 
   h2 {
@@ -42,6 +39,7 @@
 
   .button[type='submit'] {
     width: 260px;
+    cursor: pointer;
   }
 
   label {
@@ -63,7 +61,6 @@
 
     border: 2px solid $input_border_default;
     border-radius: 4px;
-    outline: none;
 
     &:hover {
       border-color: $input_border_hover;
@@ -152,22 +149,21 @@
   width: 100%;
   height: 100%;
   background-color: $disabled;
+
+  &-show {
+    display: block;
+  }
 }
 
-@keyframes invalid-modal {
-  0% {
-   transform: translateX(-50%);
-  }
+@keyframes shake {
+  0%, 100%                { transform: translateX(-50%) translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-50%) translateX(-10px); }
+  20%, 40%, 60%, 80%      { transform: translateX(-50%) translateX(10px); }
+}
 
-  33% {
-    transform: translateX(-50%) translateX(-20px);
-  }
-
-  66% {
-    transform: translateX(-50%) translateX(20px);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+@keyframes bounce {
+  0%   { transform: translate(-50%, 2000px); }
+  70%  { transform: translate(-50%, -30px);  }
+  90%  { transform: translate(-50%, 10px);   }
+  100% { transform: translate(-50%, 0);      }
 }

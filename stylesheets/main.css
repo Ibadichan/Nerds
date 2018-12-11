@@ -943,23 +943,21 @@ input[type=radio].visually-hidden {
 .modal-write-us {
   position: fixed;
   left: 50%;
-  bottom: 0;
+  bottom: 180px;
   z-index: 2;
-  visibility: hidden;
+  display: none;
   width: 960px;
   padding: 74px 100px 84px;
   background-color: white;
-  transform: translate(-50%, 100%);
-  transition: all 0.5s;
+  transform: translateX(-50%);
   box-shadow: 0px 20px 40px rgba(0, 1, 1, 0.75);
 }
-.modal-write-us-animate {
-  animation: invalid-modal 0.3s linear 0s 3 alternate none;
-}
 .modal-write-us-show {
-  bottom: 180px;
-  visibility: visible;
-  transform: translateX(-50%);
+  display: block;
+  animation: bounce 0.6s;
+}
+.modal-write-us-error {
+  animation: shake 0.6s;
 }
 .modal-write-us h2 {
   margin: 0;
@@ -980,6 +978,7 @@ input[type=radio].visually-hidden {
 }
 .modal-write-us .button[type=submit] {
   width: 260px;
+  cursor: pointer;
 }
 .modal-write-us label {
   display: block;
@@ -998,7 +997,6 @@ input[type=radio].visually-hidden {
   font: inherit;
   border: 2px solid #d7dcde;
   border-radius: 4px;
-  outline: none;
 }
 .modal-write-us input:hover, .modal-write-us textarea:hover {
   border-color: #b3b8bb;
@@ -1071,19 +1069,33 @@ input[type=radio].visually-hidden {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
 }
+.modal-overlay-show {
+  display: block;
+}
 
-@keyframes invalid-modal {
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(-50%) translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-50%) translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(-50%) translateX(10px);
+  }
+}
+@keyframes bounce {
   0% {
-    transform: translateX(-50%);
+    transform: translate(-50%, 2000px);
   }
-  33% {
-    transform: translateX(-50%) translateX(-20px);
+  70% {
+    transform: translate(-50%, -30px);
   }
-  66% {
-    transform: translateX(-50%) translateX(20px);
+  90% {
+    transform: translate(-50%, 10px);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate(-50%, 0);
   }
 }
 .slider {
